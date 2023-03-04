@@ -10,3 +10,8 @@ If you wanna use this AI you need to input pretty much sentences/words in this f
 You can basically copy+paste an article from web (for example wikipedia). 
 
 To load inputted filesinto AI use special button under the field.
+
+
+## Continue phrases
+
+To continue a phrase you need to write it into special field. Remember, if this phrase has a word which AI never got before, it will throw an error. To continue phrase you need to click a button under special field
