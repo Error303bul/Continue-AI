@@ -4,3 +4,5 @@ Simple AI which can continue phrase in special style. You need to input sentence
 ## Inputing
 
 If you wanna use this AI you need to input pretty much sentences/words
+
+![Input for words/sentences](/Images/Input.png?raw=true)
