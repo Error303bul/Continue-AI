@@ -23,7 +23,7 @@ function download() {
     if (getReserved().length > 0) {
         try {
             const file = createBlob(getReserved())
-            saveAs(file, prompt("Enter name of file") + ".had")
+            saveAs(file, prompt("Enter name of file") + ".cad")
         } catch (e) { output.innerHTML = e }
     } else {
         output.innerHTML = "Can not save empty file"
@@ -37,9 +37,9 @@ reader.onload = function () {
 }
 
 loadButton.onclick = function () {
-    if (loadFiles.files[0].name.endsWith(".had")) {
+    if (loadFiles.files[0].name.endsWith(".cad")) {
         reader.readAsText(loadFiles.files[0])
     } else {
-        output.innerHTML = "Only files with extansion had can be readen"
+        output.innerHTML = 'Only files with extansion "cad" can be readen'
     }
 }
