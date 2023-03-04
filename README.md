@@ -23,3 +23,5 @@ To continue a phrase you need to write it into special field. Remember, if this 
 ### Getting output
 
 After clicking "Enter" AI starts creating continue for your phrase based on your input.
+
+![Output](/Images/Output.PNG?raw=true)
