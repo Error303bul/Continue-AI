@@ -40,6 +40,6 @@ loadButton.onclick = function () {
     if (loadFiles.files[0].name.endsWith(".cad")) {
         reader.readAsText(loadFiles.files[0])
     } else {
-        output.innerHTML = 'Only files with extansion "cad" can be readen'
+        output.innerHTML = `Only files with extansion "cad" can be readen`
     }
 }

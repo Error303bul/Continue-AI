@@ -27,7 +27,7 @@ function continueReplic(string) {
         return true
     }
         for (let i in reservedWords) {
-            if (checkRepeation(Math.floor(wordsInSentece.length/5)+10, reservedWords[i].word)&&(reservedWords[i].useAfter.indexOf(wordsInSentece[wordsInSentece.length - 1]) > -1) && ((reservedWords[i].popularity > continueWord.popularity) || (continueWord === false))) continueWord = reservedWords[i]
+            if (checkRepeation(Math.floor(wordsInSentece.length/5)+Math.ceil(reservedWords[i].popularity/5)+5, reservedWords[i].word)&&(reservedWords[i].useAfter.indexOf(wordsInSentece[wordsInSentece.length - 1]) > -1) && ((reservedWords[i].popularity > continueWord.popularity) || (continueWord === false))) continueWord = reservedWords[i]
         }
         if (continueWord !== false) {
             continued += continueWord.word+" "
