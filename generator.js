@@ -17,25 +17,31 @@ function continueReplic(string) {
         }
     }
     let continued = ""
-    
-    /*for (let count = 0; count < 200; count++)*/while(true) {
+
+    while (true) {
         var continueWord = false
-        const checkRepeation=function(length, word){
-        for(let i=1;i<=length;i++){
-            if(wordsInSentece[wordsInSentece.length-i-1]==word) return false
+        const checkRepeation = function (length, word) {
+            for (let i = 1; i <= length; i++) {
+                if (wordsInSentece[wordsInSentece.length - i - 1] == word) return false
+            }
+            return true
         }
-        return true
-    }
         for (let i in reservedWords) {
-            if (checkRepeation(Math.floor(wordsInSentece.length/5)+Math.ceil(reservedWords[i].popularity/5)+5, reservedWords[i].word)&&(reservedWords[i].useAfter.indexOf(wordsInSentece[wordsInSentece.length - 1]) > -1) && ((reservedWords[i].popularity > continueWord.popularity) || (continueWord === false))) continueWord = reservedWords[i]
+            if (checkRepeation(Math.floor(wordsInSentece.length / 5) + Math.ceil(reservedWords[i].popularity / 5) + 5, reservedWords[i].word) && (reservedWords[i].useAfter.indexOf(wordsInSentece[wordsInSentece.length - 1]) > -1) && ((reservedWords[i].popularity > continueWord.popularity) || (continueWord === false))) continueWord = reservedWords[i]
         }
         if (continueWord !== false) {
-            continued += continueWord.word+" "
+            continued += " " + continueWord.word
             wordsInSentece.push(continueWord.word)
+            for (let i in continueWord.useBefore) {
+                if (checkRepeation(2 + Math.floor(wordsInSentece.length / 2),continueWord.useBefore[i])) {
+                    continued += " " + continueWord.useBefore[i]
+                    wordsInSentece.push(continueWord.useBefore[i])
+                    break
+                }
+            }
         } else {
-            continued.slice(0,continued,length-1)
             break;
         }
     }
-    return string + " " + continued
+    return string + continued + '.'
 }
