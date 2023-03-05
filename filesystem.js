@@ -26,7 +26,7 @@ function download() {
             saveAs(file, prompt("Enter name of file") + ".cad")
         } catch (e) { output.innerHTML = e }
     } else {
-        output.innerHTML = "Can not save empty file"
+        output.innerHTML = "\\Can not save empty file"
     }
 }
 
@@ -34,12 +34,13 @@ saveButton.onclick = download
 
 reader.onload = function () {
     loadReserved(reader.result)
+    loadFiles.value=""
 }
 
-loadButton.onclick = function () {
+loadFiles.onchange = function () {
     if (loadFiles.files[0].name.endsWith(".cad")) {
         reader.readAsText(loadFiles.files[0])
     } else {
-        output.innerHTML = `Only files with extansion "cad" can be readen`
+        output.innerHTML = `\\Only files with extansion "cad" can be readen`
     }
 }

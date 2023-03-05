@@ -2,9 +2,7 @@ var reservedWords = []
 var alphabet = []
 premadeAlphabet("abcdefghijklmnopqrstuvwxyz")
 premadeAlphabet("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-/*premadeAlphabet("абвгдеёжзиклмнопрстуфхцчшщъыьэюя")
-premadeAlphabet("АБВГДЕЁЖЗИКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ")*/
-premadeAlphabet("`@#$&")
+premadeAlphabet("`")
 class Word {
     word = ""
     popularity = 0
@@ -53,8 +51,8 @@ function load(sentence) {
                 if (reservedWords[j].word == splitted[i]) {
                     reservedWords[j].popularity++;
                     newWord = false;
-                    if (previousWord.length>0) reservedWords[j].useAfter.push(previousWord)
-                    if (nextWord.length>0) reservedWords[j].useBefore.push(nextWord)
+                    if (previousWord.length > 0) reservedWords[j].useAfter.push(previousWord)
+                    if (nextWord.length > 0) reservedWords[j].useBefore.push(nextWord)
                     break;
                 }
             }

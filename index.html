@@ -11,7 +11,9 @@
         <script src="./console.js" defer></script>
         <script src="./generator.js" defer></script>
         <script src="./filesystem.js" defer></script>
-        <input type="file" id="loadFiles"/> <button id="loadButton">load</button><br><br>
+        <script src="./extansion.js" defer></script>
+        <input accept=".cae" type="file" onchange="loadExtension()" id="extansionFiles" style="display: none;"/> <button onclick="extansionFiles.click()">Load extansion</button><br><br>
+        <input accept=".cad" type="file" id="loadFiles" style="display: none;"/> <button onclick="loadFiles.click()">Load</button><br><br>
         <button id="saveButton">Save AI</button><br><br><br><br>
         <input id="words" placeholder="Input words for AI"/>
         <br><br>
